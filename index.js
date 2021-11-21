@@ -4,6 +4,8 @@ const http = require('http');
 const server = http.createServer(app); 
 const { Server } = require("socket.io");
 const io = new Server(server);
+app.use('/css', express.static(path.join(_dirname, 'node_modules/bootstrap/dist/css')))
+app.use('/js', express.static(path.join(_dirname, 'node_modules/bootstrap/dist/js')))
 
 app.get('/', (req, res) => 
 {
